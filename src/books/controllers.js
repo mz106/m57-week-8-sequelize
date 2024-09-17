@@ -1,5 +1,7 @@
 const Book = require("./model");
 
+// addBook
+
 const addBook = async (req, res) => {
   try {
     // try the thing
@@ -15,6 +17,12 @@ const addBook = async (req, res) => {
     res.status(500).json({ message: error.message, error: error });
   }
 };
+
+// getAllBooks
+
+// deleteBookbyTitle
+
+// updateBookAuthor
 
 module.exports = {
   addBook: addBook,
