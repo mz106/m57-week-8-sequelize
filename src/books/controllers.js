@@ -20,10 +20,44 @@ const addBook = async (req, res) => {
 
 // getAllBooks
 
+const getAllBooks = async (req, res) => {
+  try {
+    const books = await Book.findAll();
+    res.status(200).json({ message: "success", books: books });
+  } catch (error) {
+    res.status(500).json({ message: error.message, error: error });
+  }
+};
+
 // deleteBookbyTitle
 
 // updateBookAuthor
 
+// bring me all the books
+
+const bringMeAllTheBooks = async (req, res) => {
+  try {
+    const books = await Book.findAll();
+    res.status(200).json({ message: "success", books: books });
+  } catch (error) {
+    res.status(500).json({ message: error.message, error: error });
+  }
+};
+
+// params example
+const paramsExample = async (req, res) => {
+  try {
+    console.log("req.params: ", req.params.title);
+
+    res.status(200).json({ message: "success", params: req.params });
+  } catch (error) {
+    res.status(500).json({ message: error.message, error: error });
+  }
+};
+
 module.exports = {
   addBook: addBook,
+  getAllBooks: getAllBooks,
+  bringMeAllTheBooks: bringMeAllTheBooks,
+  paramsExample: paramsExample,
 };
