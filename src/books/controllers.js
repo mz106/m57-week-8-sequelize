@@ -55,9 +55,20 @@ const paramsExample = async (req, res) => {
   }
 };
 
+// get book by genre
+const getBookByGenre = async (req, res) => {
+  try {
+    const book = await Book.findOne({ where: { genre: req.params.genre } });
+    res.status(200).json({ message: "success", book: book });
+  } catch (error) {
+    res.status(500).json({ message: error.message, error: error });
+  }
+};
+
 module.exports = {
   addBook: addBook,
   getAllBooks: getAllBooks,
   bringMeAllTheBooks: bringMeAllTheBooks,
   paramsExample: paramsExample,
+  getBookByGenre: getBookByGenre,
 };

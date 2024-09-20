@@ -1,15 +1,8 @@
-const myVariable = "hello world";
+const value1 = "title";
+const key1 = "book1";
 
-const myFunction = (variable) => {
-  return variable;
+const book = {
+  [key1]: value1,
 };
 
-myFunction(myVariable);
-
-const coolFunc = (par1, par2) => {
-  return par1 + par2;
-};
-
-coolFunc(1, 17);
-
-const coolVariable = "i am cool";
+console.log(book);

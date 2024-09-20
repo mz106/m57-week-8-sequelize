@@ -6,6 +6,7 @@ const {
   getAllBooks,
   bringMeAllTheBooks,
   paramsExample,
+  getBookByGenre,
 } = require("./controllers");
 
 // addbook
@@ -23,5 +24,8 @@ bookRouter.get("/books/bringmeallthebooks", bringMeAllTheBooks);
 
 // params example
 bookRouter.get("/books/paramsexample/:example", paramsExample);
+
+// get book by genre
+bookRouter.get("/books/getbookbygenre/:genre", getBookByGenre);
 
 module.exports = bookRouter;
