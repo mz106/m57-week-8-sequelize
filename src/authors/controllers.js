@@ -18,15 +18,16 @@ const getAuthorAndBooks = async (req, res) => {
     where: {
       name: req.params.name,
     },
+    include: Book,
   });
 
-  const books = await Book.findAll({
-    where: {
-      author: author.name,
-    },
-  });
+  // const books = await Book.findAll({
+  //   where: {
+  //     authorname: author.name,
+  //   },
+  // });
 
-  res.status(200).json({ message: "success", author: author, books: books });
+  res.status(200).json({ message: "success", author: author });
 };
 
 module.exports = {
